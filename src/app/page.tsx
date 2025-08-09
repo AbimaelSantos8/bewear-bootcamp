@@ -1,11 +1,9 @@
-import { Button } from "@/src/components/button";
+import { Button } from "@/components/ui/button";
 
 const Home = () => {
   return (
     <div>
-      <Button className="rounded-lg bg-purple-600 px-4 py-2 text-white hover:bg-purple-700">
-        H E L P
-      </Button>
+      <Button>Bootcamp</Button>
     </div>
   );
 };
