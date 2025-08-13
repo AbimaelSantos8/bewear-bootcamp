@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import Footer from "@/components/common/footer";
 import { Header } from "@/components/common/header";
 import ProductList from "@/components/common/product-list";
-import { Button } from "@/components/ui/button";
 import { db } from "@/db";
 import { productTable, productVariantTable } from "@/db/schema";
 import { formatCentsToBRL } from "@/helpers/money";
@@ -41,7 +40,6 @@ const ProductVariantPage = async ({ params }: ProductVariantPageProps) => {
   return (
     <>
       <Header />
-
       <div className="flex flex-col space-y-6">
         <Image
           src={productVariant.imageUrl}
@@ -68,22 +66,12 @@ const ProductVariantPage = async ({ params }: ProductVariantPageProps) => {
           <h3 className="text-muted-foreground text-sm">
             {productVariant.name}
           </h3>
-          {/*preço */}
           <h3 className="text-lg font-semibold">
             {formatCentsToBRL(productVariant.priceInCents)}
           </h3>
         </div>
 
         <ProductActions productVariantId={productVariant.id} />
-
-        <div className="flex flex-col space-y-4 px-5">
-          <Button className="rounder-full" size="lg" variant="outline">
-            Adicionar à sacola
-          </Button>
-          <Button className="rounder-full" size="lg">
-            Comprar agora
-          </Button>
-        </div>
 
         <div className="px-5">
           <p className="text-shadow-amber-600">
