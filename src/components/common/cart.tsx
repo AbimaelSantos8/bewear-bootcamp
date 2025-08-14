@@ -4,7 +4,6 @@ import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Separator } from "@radix-ui/react-separator";
 import { useQuery } from "@tanstack/react-query";
 import { ShoppingBasketIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { getCart } from "@/actions/get-card";
@@ -21,7 +20,7 @@ import {
 import CartItem from "./cart-item";
 
 export const Cart = () => {
-  const { data: cart, isPending: cartIsLoading } = useQuery({
+  const { data: cart } = useQuery({
     queryKey: ["cart"],
     queryFn: () => getCart(),
   });
