@@ -5,6 +5,8 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 
+import AddToCartButton from "./add-to-cart-button";
+
 interface ProductActionsProps {
   productVariantId: string;
 }
@@ -19,7 +21,6 @@ const ProductActions = ({ productVariantId }: ProductActionsProps) => {
   const handleIncrement = () => {
     setQuantity((prev) => prev + 1);
   };
-
   return (
     <>
       <div className="px-5">
@@ -35,6 +36,12 @@ const ProductActions = ({ productVariantId }: ProductActionsProps) => {
             </Button>
           </div>
         </div>
+      </div>
+      <div className="flex flex-col space-y-4 px-5">
+        <AddToCartButton productVariantId={productVariantId} quantity={1} />
+        <Button className="rounded-full" size="lg">
+          Comprar agora
+        </Button>
       </div>
     </>
   );
